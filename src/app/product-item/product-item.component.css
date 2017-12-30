@@ -1,0 +1,18 @@
+.product-item {
+    min-height: 200px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.title {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.cost {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}

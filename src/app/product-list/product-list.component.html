@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row" *ngIf="selectedProduct === null">
+    <ul class="categories">
+      <li *ngFor="let category of categories">
+        <a href="#">{{category.title}}</a>
+      </li>
+    </ul>
+    <div *ngFor="let item of itemList" class="col-sm-4" (click)="selectedProduct = item">
+      <app-product-item [item]="item"></app-product-item>
+    </div>
+  </div>
+  <div class="row" *ngIf="selectedProduct !== null">
+    <div class="col-sm-12">
+      <app-product-page [product]="selectedProduct" (closeProduct)="selectedProduct = null"></app-product-page>
+    </div>
+  </div>
+</div>

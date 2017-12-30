@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  showSideMenu = false;
+  state = 'home';
+
+  updateState(newState: string) {
+    this.state = newState;
+    this.showSideMenu = false;
+  }
+
+  updateSideMenuState(newState: boolean) {
+    this.showSideMenu = newState;
+  }
 }

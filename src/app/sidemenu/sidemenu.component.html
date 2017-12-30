@@ -1,0 +1,32 @@
+<div id="sidebar-wrapper" [class.active]="showSideMenu">
+  <nav id="spy">
+    <ul class="sidebar-nav nav">
+      <li class="active">
+        <a href="#" (click)="updateSate('home')">Home</a>
+      </li>
+      <li>
+        <a href="#" (click)="updateSate('about')">About</a>
+      </li>
+      <li>
+        <a href="#" (click)="updateSate('product')">Product</a>
+      </li>
+      <li>
+        <a href="#" (click)="updateSate('contact')">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="social">
+    <ul>
+      <li>
+        <a href="http://facebook.com" target="_blank">Facebook</a>
+      </li>
+      <li>
+        <a href="http://twitter.com" target="_blank">Twitter</a>
+      </li>
+      <li>
+        <a href="http://github.com" target="_blank">Github</a>
+      </li>
+    </ul>
+  </nav>
+</div>
