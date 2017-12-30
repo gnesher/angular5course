@@ -2,10 +2,10 @@
   <div class="row" *ngIf="selectedProduct === null">
     <ul class="categories">
       <li *ngFor="let category of categories">
-        <a href="#">{{category.title}}</a>
+        <a href="#" (click)="filterList(category.id)">{{category.title}}</a>
       </li>
     </ul>
-    <div *ngFor="let item of itemList" class="col-sm-4" (click)="selectedProduct = item">
+    <div *ngFor="let item of filteredItems" class="col-sm-4" (click)="selectedProduct = item">
       <app-product-item [item]="item"></app-product-item>
     </div>
   </div>
