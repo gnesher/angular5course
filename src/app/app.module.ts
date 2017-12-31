@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { SingleProductComponent } from './single-product/single-product.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { HrefProjectComponent } from './href-project/href-project.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductPageComponent } from './product-page/product-page.component';
     HomeComponent,
     ContactComponent,
     SingleProductComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    HrefProjectComponent
   ],
   imports: [
     BrowserModule,
