@@ -1,3 +1,4 @@
+import { CartComponent } from './cart/cart.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { ContactComponent } from './contact/contact.component';
 import { SingleProductComponent } from './single-product/single-product.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { HrefProjectComponent } from './href-project/href-project.component';
+import { ProductsService } from './products.service';
+import { CartService } from './cart.service';
 
 @NgModule({
   declarations: [
@@ -26,13 +29,14 @@ import { HrefProjectComponent } from './href-project/href-project.component';
     ContactComponent,
     SingleProductComponent,
     ProductPageComponent,
-    HrefProjectComponent
+    HrefProjectComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [ProductsService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

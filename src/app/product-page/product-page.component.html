@@ -1,7 +1,10 @@
 <div>
-  <img ng-src="product.image">
+  <img [src]="product.image">
   <h3>{{product.title}}</h3>
   <h5>Price: {{product.prh5e}}</h5>
   <p>Description: {{product.description}}</p>
+  <span>In Cart: {{ cartItemCount }}</span>
+  <button (click)="addItemToCart.emit(product.id)">+</button>
+  <button *ngIf="cartItemCount > 0" (click)="removeItemFromCart.emit(product.id)">-</button>
   <a href="#" (click)="closeProduct.emit()">Back</a>
 </div>

@@ -13,6 +13,9 @@
       <li>
         <a href="#" (click)="updateSate('contact')">Contact</a>
       </li>
+      <li>
+        <a href="#" (click)="updateSate('cart')">Cart <span>{{this.cartService.getTotalCount()}}</span></a>
+      </li>
     </ul>
   </nav>
 

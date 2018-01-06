@@ -1,4 +1,9 @@
-<div class="product-item" [style.background]="'url(' + item.image + ')'">
-    <span class="title">{{item.title}}</span>
-    <span class="cost">${{item.price}}</span>
+<div class="product-item-container">
+    <div class="product-item" [style.background]="'url(' + item.image + ')'" (click)="selectItem.emit(item.id)">
+        <span class="title">{{item.title}}</span>
+        <span class="cost">${{item.price}}</span>
+    </div>
+    <span>In Cart: {{ cartItemCount }}</span>
+    <button (click)="addItemToCart.emit(item.id)">+</button>
+    <button *ngIf="cartItemCount > 0" (click)="removeItemFromCart.emit(item.id)">-</button>
 </div>

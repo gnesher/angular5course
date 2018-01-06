@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FactoryOrValue } from 'rxjs/interfaces';
 
 export interface SingleItem {
   name: string;
@@ -11,13 +12,19 @@ export interface SingleItem {
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.css']
 })
-export class ProductItemComponent {
+export class ProductItemComponent implements OnInit {
 
   @Input() item: SingleItem;
+  @Output() addItemToCart: EventEmitter<String> = new EventEmitter<String>();
+  @Output() removeItemFromCart: EventEmitter<String> = new EventEmitter<String>();
+  @Output() selectItem: EventEmitter<String> = new EventEmitter<String>();
+  @Input() cartItemCount: number;
 
   constructor(
   ) {
   }
 
+  ngOnInit() {
+  }
 
 }

@@ -8,7 +8,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ProductPageComponent implements OnInit {
 
   @Input() product;
+  @Input() cartItemCount: number;
+
   @Output() closeProduct = new EventEmitter<void>();
+  @Output() addItemToCart: EventEmitter<String> = new EventEmitter<String>();
+  @Output() removeItemFromCart: EventEmitter<String> = new EventEmitter<String>();
 
 
   constructor() { }

@@ -3,4 +3,5 @@
 <app-home *ngIf="state === 'home'"></app-home>
 <app-about *ngIf="state === 'about'"></app-about>
 <app-contact *ngIf="state === 'contact'"></app-contact>
+<app-cart *ngIf="state === 'cart'"></app-cart>
 <app-sidemenu [showSideMenu]="showSideMenu" (stateChanged)="updateState($event)"></app-sidemenu>

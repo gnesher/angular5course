@@ -1,4 +1,6 @@
+import { CartService } from './../cart.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-sidemenu',
@@ -14,7 +16,7 @@ export class SidemenuComponent implements OnInit {
     this.stateChanged.emit(newState);
   }
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
   }
