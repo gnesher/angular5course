@@ -79,3 +79,11 @@
   .social li {
       display: inline-block;
   }
+
+  #spy {
+    position: relative;
+  }
+
+  .lang-selection {
+    padding-left: 10px;
+  }

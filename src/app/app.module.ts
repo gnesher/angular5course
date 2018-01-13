@@ -1,3 +1,4 @@
+import { TranslationService } from './translation.service';
 import { CartComponent } from './cart/cart.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { HrefProjectComponent } from './href-project/href-project.component';
 import { ProductsService } from './products.service';
 import { CartService } from './cart.service';
+import { TranslatePipe } from './translate.pipe';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,14 @@ import { CartService } from './cart.service';
     SingleProductComponent,
     ProductPageComponent,
     HrefProjectComponent,
-    CartComponent
+    CartComponent,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [ProductsService, CartService],
+  providers: [ProductsService, CartService, TranslationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

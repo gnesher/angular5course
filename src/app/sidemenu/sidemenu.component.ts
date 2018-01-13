@@ -1,6 +1,6 @@
+import { TranslationService } from './../translation.service';
 import { CartService } from './../cart.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
 
 @Component({
   selector: 'app-sidemenu',
@@ -16,7 +16,12 @@ export class SidemenuComponent implements OnInit {
     this.stateChanged.emit(newState);
   }
 
-  constructor(private cartService: CartService) { }
+  selectLanguage(newLang: string): void {
+    this.translationService.selectedLanguage = newLang;
+  }
+
+  constructor(private cartService: CartService,
+              private translationService: TranslationService) { }
 
   ngOnInit() {
   }
