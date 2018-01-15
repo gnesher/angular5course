@@ -1,3 +1,4 @@
+import { PermissionsService } from './../permissions.service';
 import { TranslationService } from './../translation.service';
 import { CartService } from './../cart.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
@@ -21,7 +22,8 @@ export class SidemenuComponent implements OnInit {
   }
 
   constructor(private cartService: CartService,
-              private translationService: TranslationService) { }
+              private translationService: TranslationService,
+              private permissionsService: PermissionsService) { }
 
   ngOnInit() {
   }

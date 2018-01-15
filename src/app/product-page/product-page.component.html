@@ -6,5 +6,6 @@
   <span>In Cart: {{ cartItemCount }}</span>
   <button (click)="addItemToCart.emit(product.id)">+</button>
   <button *ngIf="cartItemCount > 0" (click)="removeItemFromCart.emit(product.id)">-</button>
+  <button *ngIf="permissionsService.isAdmin" (click)="removeItemFromCart.emit(item.id)">edit</button>
   <a href="#" (click)="closeProduct.emit()">Back</a>
 </div>

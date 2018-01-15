@@ -1,3 +1,4 @@
+import { PermissionsService } from './../permissions.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FactoryOrValue } from 'rxjs/interfaces';
 
@@ -19,8 +20,9 @@ export class ProductItemComponent implements OnInit {
   @Output() removeItemFromCart: EventEmitter<String> = new EventEmitter<String>();
   @Output() selectItem: EventEmitter<String> = new EventEmitter<String>();
   @Input() cartItemCount: number;
+  @Output() editItem: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(
+  constructor(private permissionsService: PermissionsService
   ) {
   }
 

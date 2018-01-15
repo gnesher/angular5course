@@ -21,6 +21,9 @@
         <a href="#" (click)="updateSate('contact')">{{'Contact' | translate}}</a>
       </li>
       <li>
+        <a href="#" *ngIf="permissionsService.isAdmin" (click)="updateSate('add')">{{'Add' | translate}}</a>
+      </li>
+      <li>
         <a href="#" (click)="updateSate('cart')">{{'Cart' | translate}}
           <span>{{this.cartService.getTotalCount()}}</span>
         </a>

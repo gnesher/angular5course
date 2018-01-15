@@ -6,11 +6,12 @@ import { Component, EventEmitter } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  showSideMenu = false;
-  state = 'home';
+  private showSideMenu = false;
+  private state = 'home';
+  private productID = null;
 
   updateState(newState: string) {
-    this.state = newState;
+    [this.state, this.productID] = newState.split(':');
     this.showSideMenu = false;
   }
 

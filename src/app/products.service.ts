@@ -7,12 +7,12 @@ export interface ProductCategory {
 }
 
 export interface Product {
+  id: string;
   categoryId: number;
   image: string;
   title: string;
   price: number;
-  description: string;
-  id: string;
+  description?: string;
 }
 
 @Injectable()
@@ -42,11 +42,21 @@ export class ProductsService {
     ];
 
     this.categories = [
-      { id: 0, title: 'all' },
       { id: 1, title: 'first category' },
       { id: 2, title: 'second category' },
     ];
 
+  }
+
+  addProduct(newProduct: Product) {
+    this.itemList.push(newProduct);
+  }
+
+  editProduct(updatedProduct: Product) {
+    const prodPos = _.findIndex(this.itemList, {id: updatedProduct.id});
+    console.log('pos', prodPos);
+    this.itemList[prodPos] = updatedProduct;
+    console.log(this.itemList);
   }
 
   setFilteredItems(categoryID: number): Product[] {
@@ -59,7 +69,7 @@ export class ProductsService {
   }
 
   getProductsBId(ID: number) {
-    return this.itemList[ID];
+    return _.find(this.itemList, {id: ID});
   }
 
 }

@@ -11,6 +11,8 @@ import { CartService } from '../cart.service';
 })
 export class ProductListComponent implements OnInit {
 
+  @Output() stateChanged: EventEmitter<string> = new EventEmitter<string>();
+
   selectedProduct: Product = null;
   selectedCategory = 0;
 

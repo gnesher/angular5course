@@ -1,3 +1,4 @@
+import { PermissionsService } from './../permissions.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -15,7 +16,7 @@ export class ProductPageComponent implements OnInit {
   @Output() removeItemFromCart: EventEmitter<String> = new EventEmitter<String>();
 
 
-  constructor() { }
+  constructor(private permissionsService: PermissionsService) { }
 
   ngOnInit() {
   }

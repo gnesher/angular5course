@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div>{{message}}</div>
+      <form (ngSubmit)="addProduct(); productForm.reset()" #productForm="ngForm">
+        <div class="form-group">
+          <label for="select-category">Select Category</label>
+          <select name="select-category" [(ngModel)]="product.categoryId" class="form-control" id="select-category">
+            <option *ngFor="let category of productsService.categories" [ngValue]="category.id">{{category.title}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="select-image">Image URL</label>
+          <input required name="select-image" [(ngModel)]="product.image" class="form-control" type="text" id="select-image">
+        </div>
+        <div class="form-group">
+          <label for="select-title">Title</label>
+          <input required name="select-title" [(ngModel)]="product.title" class="form-control" type="text" id="select-title">
+        </div>
+        <div class="form-group">
+          <label for="select-cost">Price</label>
+          <input required appMin="0" name="select-cost" [(ngModel)]="product.price" class="form-control" type="text" id="select-cost">
+        </div>
+        <div class="form-group">
+          <label for="select-description">Description</label>
+          <textarea name="select-description" [(ngModel)]="product.description" class="form-control" id="select-description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
+    </div>
+  </div>
+</div>

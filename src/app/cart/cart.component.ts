@@ -1,6 +1,6 @@
 import { ProductsService, Product } from './../products.service';
 import { CartService, UserCart } from './../cart.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import _ from 'lodash';
 
 @Component({
@@ -9,6 +9,8 @@ import _ from 'lodash';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+
+  @Output() stateChanged: EventEmitter<string> = new EventEmitter<string>();
 
   private cartItems: UserCart;
   private products: Product[];

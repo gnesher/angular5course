@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+
 import { TranslationService } from './translation.service';
 import { CartComponent } from './cart/cart.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +20,9 @@ import { HrefProjectComponent } from './href-project/href-project.component';
 import { ProductsService } from './products.service';
 import { CartService } from './cart.service';
 import { TranslatePipe } from './translate.pipe';
+import { EditproductComponent } from './editproduct/editproduct.component';
+import { PermissionsService } from './permissions.service';
+import { MinDirective } from './min.directive';
 
 @NgModule({
   declarations: [
@@ -33,13 +38,16 @@ import { TranslatePipe } from './translate.pipe';
     ProductPageComponent,
     HrefProjectComponent,
     CartComponent,
-    TranslatePipe
+    TranslatePipe,
+    EditproductComponent,
+    MinDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
-  providers: [ProductsService, CartService, TranslationService],
+  providers: [ProductsService, CartService, TranslationService, PermissionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

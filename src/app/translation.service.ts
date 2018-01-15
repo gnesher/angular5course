@@ -17,14 +17,16 @@ export class TranslationService {
       'About': 'אודות',
       'Product': 'מוצרים',
       'Contact': 'צור קשר',
-      'Cart': 'עגלה'
+      'Cart': 'עגלה',
+      'Add': 'הוספה'
     },
     'en': {
       'Home': 'Home',
       'About': 'About',
       'Product': 'Product',
       'Contact': 'Contact',
-      'Cart': 'Cart'
+      'Cart': 'Cart',
+      'Add': 'Add'
     }
   };
 
