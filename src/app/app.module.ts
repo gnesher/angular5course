@@ -23,6 +23,7 @@ import { TranslatePipe } from './translate.pipe';
 import { EditproductComponent } from './editproduct/editproduct.component';
 import { PermissionsService } from './permissions.service';
 import { MinDirective } from './min.directive';
+import { WarningDirective } from './warning.directive';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MinDirective } from './min.directive';
     CartComponent,
     TranslatePipe,
     EditproductComponent,
-    MinDirective
+    MinDirective,
+    WarningDirective
   ],
   imports: [
     BrowserModule,

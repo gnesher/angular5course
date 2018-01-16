@@ -40,6 +40,10 @@ export class EditproductComponent implements OnInit {
 
   }
 
+  logUserAnswer($event) {
+    console.log('user answered: ', $event);
+  }
+
   ngOnInit() {
     if (this.editProductID) {
       this.product = this.productsService.getProductsBId(this.editProductID);

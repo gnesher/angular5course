@@ -25,7 +25,7 @@
           <label for="select-description">Description</label>
           <textarea name="select-description" [(ngModel)]="product.description" class="form-control" id="select-description"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="submit" (buttonClicked)="logUserAnswer($event)" appWarning="this is a test" class="btn btn-primary">Add</button>
       </form>
     </div>
   </div>
