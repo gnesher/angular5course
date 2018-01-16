@@ -1,11 +1,11 @@
 <div>
   <img [src]="product.image">
   <h3>{{product.title}}</h3>
-  <h5>Price: {{product.prh5e}}</h5>
+  <h5>Price: {{product.price}}</h5>
   <p>Description: {{product.description}}</p>
-  <span>In Cart: {{ cartItemCount }}</span>
-  <button (click)="addItemToCart.emit(product.id)">+</button>
-  <button *ngIf="cartItemCount > 0" (click)="removeItemFromCart.emit(product.id)">-</button>
-  <button *ngIf="permissionsService.isAdmin" (click)="removeItemFromCart.emit(item.id)">edit</button>
-  <a href="#" (click)="closeProduct.emit()">Back</a>
+  <span>In Cart: {{ getCartCount(product.id) }}</span>
+  <button (click)="addItemToCart(product.id)">+</button>
+  <button *ngIf="getCartCount(product.id) > 0" (click)="removeItemFromCart(product.id)">-</button>
+  <a *ngIf="permissionsService.isAdmin" [routerLink]="['/edit', product.id]">edit</a>
+  <a href="#" routerLink='/products'>Back</a>
 </div>

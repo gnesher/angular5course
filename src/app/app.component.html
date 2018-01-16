@@ -1,9 +1,3 @@
 <app-header [showSideMenu]="showSideMenu" (showSideMenuChanged)="updateSideMenuState($event)"></app-header>
-<app-product-list (stateChanged)="updateState($event)" *ngIf="state === 'product'"></app-product-list>
-<app-home *ngIf="state === 'home'"></app-home>
-<app-about *ngIf="state === 'about'"></app-about>
-<app-contact *ngIf="state === 'contact'"></app-contact>
-<app-cart (stateChanged)="updateState($event)" *ngIf="state === 'cart'"></app-cart>
-<!-- No router yet, we simply concat product id to state if we are editing -->
-<app-editproduct [editProductID]="productID" *ngIf="state === 'add'"></app-editproduct>
-<app-sidemenu [showSideMenu]="showSideMenu" (stateChanged)="updateState($event)"></app-sidemenu>
+<router-outlet></router-outlet>
+<app-sidemenu [showSideMenu]="showSideMenu"></app-sidemenu>

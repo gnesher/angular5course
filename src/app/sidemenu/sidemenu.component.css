@@ -33,8 +33,14 @@
     display: block;
     text-decoration: none;
     padding-left: 60px;
+
   }
-  
+
+  .sidebar-nav li a.active {
+    text-decoration: underline;
+  }
+
+
   .sidebar-nav li a span:before {
     position: absolute;
     left: 0;

@@ -3,9 +3,10 @@
   <ul class="cart">
     <li *ngFor="let item of cartItems">
       <span *ngIf="item.count > 0">
-        {{getProductNameByID(item.id)}}, in basket: {{item.count}}
+        <a [routerLink]="['product', item.id]">{{getProductNameByID(item.id)}}</a>, in basket: {{item.count}}
         <button *ngIf="item.count > 0" (click)="removeItemFromCart(item.id)">-</button>
       </span>
     </li>
+    <router-outlet></router-outlet>
   </ul>
 </div>

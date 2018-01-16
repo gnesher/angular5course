@@ -1,28 +1,22 @@
 <div class="container">
-  <div class="row" *ngIf="selectedProduct === null">
-    <ul class="categories">
-      <li>
-        <a href="#" (click)="filterList(0)">All</a>
-      </li>
-      <li *ngFor="let category of categories">
-        <a href="#" (click)="filterList(category.id)">{{category.title}}</a>
-      </li>
-    </ul>
-    <div *ngFor="let item of filteredItems" class="col-sm-4">
-      <app-product-item [item]="item"
-                        (selectItem)="selectedProduct = item"
-                        (addItemToCart)="addItemToCart(item.id)"
-                        (editItem)="stateChanged.emit($event)"
-                        (removeItemFromCart)="removeItemFromCart(item.id)"
-        [cartItemCount]="getCartCount(item.id)">
-      </app-product-item>
-    </div>
+  <ul class="categories">
+    <li>
+      <a (click)="filterList(0)">All</a>
+    </li>
+    <li *ngFor="let category of categories">
+      <a (click)="filterList(category.id)">{{category.title}}</a>
+    </li>
+  </ul>
+  <div *ngFor="let item of filteredItems" class="col-sm-4">
+    <app-product-item [item]="item" (addItemToCart)="addItemToCart(item.id)" (editItem)="stateChanged.emit($event)" (removeItemFromCart)="removeItemFromCart(item.id)"
+      [cartItemCount]="getCartCount(item.id)">
+    </app-product-item>
   </div>
-  <div class="row" *ngIf="selectedProduct !== null">
+</div>
+<!-- <div class="row" *ngIf="selectedProduct !== null">
     <div class="col-sm-12">
       <app-product-page [product]="selectedProduct" (closeProduct)="selectedProduct = null" (addItemToCart)="addItemToCart(selectedProduct.id)"
         (removeItemFromCart)="removeItemFromCart(selectedProduct.id)" [cartItemCount]="getCartCount(selectedProduct.id)">>
       </app-product-page>
     </div>
-  </div>
-</div>
+  </div> -->

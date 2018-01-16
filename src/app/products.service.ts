@@ -69,7 +69,7 @@ export class ProductsService {
   }
 
   getProductsBId(ID: number) {
-    return _.find(this.itemList, {id: ID});
+    return _.find(this.itemList, {id: ID.toString()});
   }
 
 }

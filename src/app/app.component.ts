@@ -1,4 +1,5 @@
 import { Component, EventEmitter } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,13 @@ import { Component, EventEmitter } from '@angular/core';
 })
 export class AppComponent {
   private showSideMenu = false;
-  private state = 'home';
-  private productID = null;
 
-  updateState(newState: string) {
-    [this.state, this.productID] = newState.split(':');
-    this.showSideMenu = false;
+  constructor(private router: Router) {
+    router.events.subscribe( e => {
+      if (e instanceof NavigationEnd) {
+        this.showSideMenu = false;
+      }
+    });
   }
 
   updateSideMenuState(newState: boolean) {

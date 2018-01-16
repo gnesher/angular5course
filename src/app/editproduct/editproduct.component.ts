@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { ProductsService, Product } from './../products.service';
 import { Component, OnInit, Input } from '@angular/core';
 import _ from 'lodash';
@@ -11,7 +12,11 @@ export class EditproductComponent implements OnInit {
 
   @Input() editProductID: number;
 
-  constructor(private productsService: ProductsService) {
+  constructor(private productsService: ProductsService,
+              private route: ActivatedRoute) {
+    this.route.paramMap.subscribe((p) => {
+      this.product = this.productsService.getProductsBId(parseInt(p.get('id'), 10));
+    });
   }
 
   private message: string = null;
@@ -45,9 +50,6 @@ export class EditproductComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.editProductID) {
-      this.product = this.productsService.getProductsBId(this.editProductID);
-    }
   }
 
 }
