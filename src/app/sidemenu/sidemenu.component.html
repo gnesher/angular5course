@@ -18,10 +18,10 @@
         <a routerLinkActive="active" routerLink="/products">{{'Product' | translate}}</a>
       </li>
       <li>
-        <a routerLinkActive="active" routerLinkActive="active"routerLink="/contact">{{'Contact' | translate}}</a>
+        <a routerLinkActive="active" routerLinkActive="active" routerLink="/contact">{{'Contact' | translate}}</a>
       </li>
       <li>
-        <a routerLinkActive="active" *ngIf="permissionsService.isAdmin" routerLink="/edit')">{{'Add' | translate}}</a>
+        <a routerLinkActive="active" *ngIf="permissionsService.isAdmin" routerLink="/add">{{'Add' | translate}}</a>
       </li>
       <li>
         <a routerLinkActive="active" routerLink="/cart">{{'Cart' | translate}}

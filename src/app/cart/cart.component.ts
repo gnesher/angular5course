@@ -18,9 +18,9 @@ export class CartComponent implements OnInit {
   constructor(private productsService: ProductsService,
     private cartService: CartService) { }
 
-    // TODO: Angular ngFor does not itterate over dictionarys which requires a map here
-    // should move to sets
-    ngOnInit() {
+  // TODO: Angular ngFor does not itterate over dictionarys which requires a map here
+  // should move to sets
+  ngOnInit() {
     this.cartItems = _.map(this.cartService.getUserCart(), (value, key) => { return { id: key, count: value } });
   }
 

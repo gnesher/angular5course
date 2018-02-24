@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'products', component: ProductListComponent },
   { path: 'product/:id', component: ProductPageComponent },
   { path: 'cart', component: CartComponent, children: [{ path: 'product/:id', component: ProductPageComponent }] },
-  { path: 'edit', component: EditproductComponent },
+  { path: 'add', component: EditproductComponent },
   { path: 'edit/:id', component: EditproductComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];

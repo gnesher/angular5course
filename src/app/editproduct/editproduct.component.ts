@@ -12,13 +12,6 @@ export class EditproductComponent implements OnInit {
 
   @Input() editProductID: number;
 
-  constructor(private productsService: ProductsService,
-              private route: ActivatedRoute) {
-    this.route.paramMap.subscribe((p) => {
-      this.product = this.productsService.getProductsBId(parseInt(p.get('id'), 10));
-    });
-  }
-
   private message: string = null;
 
   private product: Product = {
@@ -29,6 +22,17 @@ export class EditproductComponent implements OnInit {
     description: null,
     id: null
   };
+
+  constructor(private productsService: ProductsService,
+    private route: ActivatedRoute) {
+    this.route.paramMap.subscribe((p) => {
+      if (p.get('id')) {
+        this.product = this.productsService.getProductsBId(parseInt(p.get('id'), 10));
+      }
+    });
+
+    console.log(this.product);
+  }
 
   addProduct() {
     // if no id is provided (new product) we generate a unique id using lodash and add a new product
